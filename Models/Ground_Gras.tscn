@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://b8dbjn7a5nyf"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_iubrx"]
+size = Vector3(20, 1, 20)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7kn1v"]
+albedo_color = Color(0, 0.239216, 0.0235294, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1f5ou"]
+size = Vector3(20, 1, 20)
+
+[node name="Ground" type="StaticBody3D"]
+collision_layer = 2
+collision_mask = 5
+
+[node name="ground_grass" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+mesh = SubResource("BoxMesh_iubrx")
+surface_material_override/0 = SubResource("StandardMaterial3D_7kn1v")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+shape = SubResource("BoxShape3D_1f5ou")
