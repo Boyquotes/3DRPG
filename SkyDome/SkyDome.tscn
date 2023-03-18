@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://bv36m7kd1jpik"]
+
+[sub_resource type="Gradient" id="Gradient_17w0g"]
+offsets = PackedFloat32Array(0, 0.785714)
+colors = PackedColorArray(0, 0, 0, 1, 0, 0.0352941, 0.235294, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_drkb6"]
+gradient = SubResource("Gradient_17w0g")
+fill_from = Vector2(0.994505, 0.571429)
+
+[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_ujq53"]
+night_sky = SubResource("GradientTexture2D_drkb6")
+
+[sub_resource type="Sky" id="Sky_cpbp3"]
+sky_material = SubResource("PhysicalSkyMaterial_ujq53")
+
+[sub_resource type="Environment" id="Environment_iunti"]
+background_mode = 2
+sky = SubResource("Sky_cpbp3")
+
+[node name="SkyDome" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_iunti")
+
+[node name="Sun" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+shadow_enabled = true

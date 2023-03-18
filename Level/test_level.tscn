@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://oeoptxud4us3"]
+[gd_scene load_steps=3 format=3 uid="uid://oeoptxud4us3"]
 
 [ext_resource type="PackedScene" uid="uid://b8dbjn7a5nyf" path="res://Models/Ground_Gras.tscn" id="1_nahcp"]
+[ext_resource type="PackedScene" uid="uid://bv36m7kd1jpik" path="res://SkyDome/SkyDome.tscn" id="2_42i6g"]
 
 [node name="Test_Level" type="Node3D"]
 
@@ -8,3 +9,5 @@
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 8)
+
+[node name="SkyDome" parent="." instance=ExtResource("2_42i6g")]
